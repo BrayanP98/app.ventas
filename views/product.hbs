@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <title>mi pagina</title>
+  
+</head>
+<body>
+  <!-- <nav class="navbar navbar-expand-md bg-dark"  style="position: fixed;  z-index: 9999;" >
+          <div class="container-fluid">
+            
+              <li><img src="img/logo.gif" alt="automatico" id="logo"></li>
+            
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav bg-dark">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link " href="contact">contacto</a>
+                 <a class="nav-link active" aria-current="page" href="product">Productos</a>
+                <a class="nav-link disabled">Disabled</a>
+                
+                <row>
+                  <div class="container-fluid ">
+                    <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button  class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </row>
+                <div class="row">
+                <div class="col-12"  id="cont-user">
+                <i class="fa-light fa-user-secret" id="begin-secion" ><img src="img/icono-secion.svg" alt=""></i>
+                <i class="fa-light fa-user-secret" id="close-secion" ><img src="img/salida_36.png" alt=""></i>
+                <span  style="background: red;" class="tooltip">Twitter</span>
+              </div>
+              </div>
+              </div>              
+            </div>  
+           
+            
+                 
+        </div> 
+       
+      </nav>-->
+
+
+            {{> tasks/menu-lateral}}
+ 
+      <div class="herramientas">
+       <script>
+         
+
+
+
+       </script>
+        <a href="/logout" class="btn btn-light"  id="btn_logout">logout</a>
+        <p class="nombre_user">
+          
+        <strong>---------------BIENVENIDO</strong>:{{#each users}} {{nombre}} {{/each}}
+        </p>
+       
+      </div>
+
+   <div class="container-fluid " id="cont_productos">
+    
+     <div class="row">
+    
+
+
+        
+     
+        <div class="col-12" id="item-prod">
+       
+       {{#each prods}}
+      
+        <div class="col-md-12">
+       
+         <img src={{imagen}} alt="">
+         <div class="product-body">
+            <p class="product-category">Cod. {{categoria}}</p>
+            <h3 class="product-name"><a href="#">{{nombre}}</a></h3>
+            <h4 class="product-price">${{valor}}<del --class="product-old-price">$990.00</del></h4>
+         </div>
+         <div class="add-to-cart">
+		<button   class="add-to-cart-btn" >
+           <img src="/img/shop_car.svg" alt=""> add to cart</button>
+		</div>
+         
+        </div>
+        
+        {{/if}}
+         {{/each}}
+        <div>
+
+          <Script type="text/javascript">
+          
+          let template= document.getElementByI("product").innerHTML;
+          var compile=Handlebars.compile(template);
+
+          
+          
+          </Script>
+            
+         </div>
+        </div>
+
+
+   </div>
+   </div>
+   
+
+   
+
+
+     {{> tasks/pop-ups}}
+</body>
+
+<script type="script" src="/js/myscript.js" ></script>
+</html>
+
+
+ 
